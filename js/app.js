@@ -7,6 +7,7 @@
     const contact = document.getElementById('contact');
     const modalBtn = document.getElementById('modalBtn');
     const modal = document.getElementById('modal');
+    const btnSubmit = document.getElementById('btnSubmit');
 
     function contemClasse(elemento, classe) {
         for (let i = 0; i < elemento.classList.length; i++) {
@@ -45,8 +46,15 @@
         modal.style.display = 'block';
     });
 
-    window.onclick = ()=> {
-        modal.style.display = 'none';
+    window.onclick = (evt)=> {
+        if(evt.target == modal) {
+            modal.style.display = 'none';
+        }
     };
+
+    btnSubmit.addEventListener('click',(evt)=>{
+        evt.preventDefault();
+    })
+
 
 })()
